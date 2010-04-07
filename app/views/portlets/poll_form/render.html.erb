@@ -1,0 +1,20 @@
+<% if @poll -%>
+  <div class="poll_form">
+    <% form_tag(cms_handler_path(@portlet, "vote")) do %>
+      <h4><%= h @poll.name %></h4>
+      <p><%= h @poll.question %></p>
+      <ul>
+        <% @poll.poll_options.each_with_index do |option, i| -%>          
+          <li>
+            <%= radio_button_tag("option", option.id, i == 0) %>
+            <%= label_tag("option_#{option.id}", h(option.name)) %>
+          </li>          
+          
+        <% end -%>          
+      </ul>
+      <%= submit_tag("Vote") %>
+    <% end %>
+  </div>
+<% else -%>
+  Poll not found
+<% end -%>

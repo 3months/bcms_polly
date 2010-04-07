@@ -1,0 +1,4 @@
+<%= f.cms_text_field :name %>
+<%= f.cms_text_field :success_url %>
+<%= f.cms_drop_down :poll_id, [['-- select --', '']] + Poll.find(:all, :order => "name ASC").map{|p| [p.name, p.id.to_s]} %>
+<%= f.cms_template_editor :template %>

@@ -5,6 +5,13 @@ class Poll < ActiveRecord::Base
   after_create :save_options
   after_update :update_options
 
+  def vote!(option_id)
+    if poll_option = self.poll_options.find_by_id(option_id)
+      poll_option.poll_votes.create!
+    end
+  end
+
+
   private
   
   def save_options
@@ -23,6 +30,8 @@ class Poll < ActiveRecord::Base
     end
 
   end
+  
+
   
 
 end
