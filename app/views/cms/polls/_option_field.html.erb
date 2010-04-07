@@ -1,0 +1,8 @@
+<div class="fields text_fields">
+  <%= label_tag("poll[options]", "Option:") %>
+  <% if defined? option %>
+    <%= text_field_tag("poll[options][#{option.id}]", option.name) %>
+  <% else %>
+    <%= text_field_tag("poll[options][]") %>
+  <% end %>
+</div>

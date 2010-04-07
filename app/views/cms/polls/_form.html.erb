@@ -1,0 +1,17 @@
+
+<%= f.cms_text_field :name %>
+<%= f.cms_text_field :question %>
+<% if @block.new_record? %>
+  <%= render :partial => "option_field" %>
+  <%= render :partial => "option_field" %>
+  <%= render :partial => "option_field" %>
+  <%= render :partial => "option_field" %>
+  <%= render :partial => "option_field" %>
+  <%= render :partial => "option_field" %>
+  <%= render :partial => "option_field" %>
+  <%= render :partial => "option_field" %>
+<% else %>
+  <% @block.poll_options.each do |option| %>
+    <%= render :partial => "option_field", :locals => {:option => option} %>
+  <% end %>
+<% end %>

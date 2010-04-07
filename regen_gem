@@ -1,0 +1,4 @@
+#!/bin/sh
+gem uninstall bcms_polly
+gem build bcms_polly.gemspec
+gem install bcms_polly-1.0.0.gem
