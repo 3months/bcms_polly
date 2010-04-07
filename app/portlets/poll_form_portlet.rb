@@ -12,7 +12,7 @@ class PollFormPortlet < Portlet
     
     if poll = Poll.find_by_id(self.poll_id.to_i) 
       poll.vote!(params[:option])
-      self.success_url
+      self.success_url + "?poll_id=#{poll.id}"
     else
       url_for_failure
     end

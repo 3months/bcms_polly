@@ -1,11 +1,11 @@
 SPEC = Gem::Specification.new do |spec| 
   spec.name = "bcms_polly"
   spec.rubyforge_project = spec.name
-  spec.version = "1.0.0"
-  spec.summary = "A Polly Module for BrowserCMS"
-  spec.author = "BrowserMedia" 
-  spec.email = "github@browsermedia.com" 
-  spec.homepage = "http://www.browsercms.org" 
+  spec.version = "0.0.1"
+  spec.summary = "A Painfully Simple Poll Module for BrowserCMS"
+  spec.author = "3months"
+  spec.email = "blackadmin@3months.com"
+  spec.homepage = "http://3months.com"
   spec.files += Dir["app/**/*"]
   spec.files += Dir["db/migrate/*.rb"]
   spec.files -= Dir["db/migrate/*_browsercms_*.rb"]

@@ -1,0 +1,10 @@
+<div class="poll_results">
+  <% if @poll %>
+    <h2> Results for <em><%= @poll.question %></em></h2>
+    <ul>
+      <% @poll.poll_options.each do |option| %>
+        <li><%= "#{option.name}: #{pluralize(option.poll_vote_count, 'vote', 'votes')}"  %> </li>
+      <% end %>
+    </ul>
+  <% end %>
+</div>
