@@ -1,4 +1,10 @@
 ActionController::Routing::Routes.draw do |map|
+  map.namespace('cms') {|cms| cms.content_blocks :poll_votes }
+
+  map.namespace('cms') {|cms| cms.content_blocks :poll_options }
+
+  map.namespace('cms') {|cms| cms.content_blocks :polls }
+
   map.routes_for_browser_cms
 
   # The priority is based upon order of creation: first created -> highest priority.
